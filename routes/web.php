@@ -10,9 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Mail\WelcomeMail; 
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/email', function () {
+    return new WelcomeMail();
 });
 
 Route::get('/hello', 'HelloController@index');
